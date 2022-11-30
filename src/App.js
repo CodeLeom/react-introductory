@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+function App(){
+    const title = 'Review Application'
+    const body = 'The first paragraph in our code'
+    const fellowNames = [
+        {id:1, text: 'Deborah Musk'},
+        {id:2, text: 'Grace Osaie'},
+        {id:3, text: 'Damilola Johnson'},
+        {id:4, text: 'Nelly Mark'}
+    ]
+    return ( 
+        <div className='container'>
+            <h1>{title}</h1>
+            <p>{body}</p>
+      
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+            <div>
+                <h3>Fellow Names ({fellowNames.length})</h3>
+                <ul>
+                    {fellowNames.map((list, index) => (
+                        <li key={index}>{list.text}</li>
+                    ))}
+                </ul>
+            </div>
+        </div>    
+    )
 }
 
-export default App;
+export default App
+
+
