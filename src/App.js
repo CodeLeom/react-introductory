@@ -1,29 +1,17 @@
-function App(){
-    const title = 'Review Application'
-    const body = 'The first paragraph in our code'
-    const fellowNames = [
-        {id:1, text: 'Deborah Musk'},
-        {id:2, text: 'Grace Osaie'},
-        {id:3, text: 'Damilola Johnson'},
-        {id:4, text: 'Nelly Mark'}
-    ]
-    return ( 
-        <div className='container'>
-            <h1>{title}</h1>
-            <p>{body}</p>
-      
+import Header from "./components/Header"
 
+function App(){
+    
+    return ( 
+      <>
+        <Header />
             <div>
-                <h3>Fellow Names ({fellowNames.length})</h3>
-                <ul>
-                    {fellowNames.map((list, index) => (
-                        <li key={index}>{list.text}</li>
-                    ))}
-                </ul>
+                <p>Hi there!</p>
             </div>
-        </div>    
+      </>
     )
 }
+
 
 export default App
 
