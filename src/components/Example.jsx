@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import '../index.css'
 
-class example extends Component {
+class Example extends Component {
 
     constructor(props) {
       super(props)
@@ -31,7 +31,7 @@ class example extends Component {
   }
 }
 
-export default example
+export default Example
 
 
 
