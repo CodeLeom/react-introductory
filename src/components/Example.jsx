@@ -8,15 +8,15 @@ class Example extends Component {
     
       this.state = {
          message: 'Welcome to React State',
-         btn: 'submit'
+         btn: 'click me'
       }
     }
-    btnChanged= () =>{
+   btnChanged = ()=> {
         this.setState({
-            message: 'Thank you for learning!',
-            btn: 'submitted'
+            message: 'Thank you for clicking the button',
+            btn: 'clicked'
         })
-    }
+   }
 
   render() {
     const styles = {
