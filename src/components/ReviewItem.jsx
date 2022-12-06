@@ -5,7 +5,7 @@ function ReviewItem() {
   const [text, setText] = useState('Lorem ipsum dolor, sit amet consectetur adipisicing elit.')
 
   const mdyState = () => {
-    setRating()
+    setRating(8)
     setText ('This is a new state of the text')
   }
 
