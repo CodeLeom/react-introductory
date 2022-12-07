@@ -1,12 +1,20 @@
+import PropTypes from 'prop-types'
+import Card from "./Card"
+
+
 function ReviewItem({item}) {
   return (
     <>
-      <div className="card">
+      <Card>
         <div className="num-display">{item.rating}</div>
         <p>{item.text}</p>
-      </div>
+      </Card>
     </>
   )
 }
 
+
+ReviewItem.propTypes = {
+  item: PropTypes.object,
+}
 export default ReviewItem

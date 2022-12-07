@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types'
 import ReviewItem from './ReviewItem'
 
 function ReviewList({review}) {
@@ -15,4 +16,14 @@ function ReviewList({review}) {
   )
 }
 
+
+ReviewList.propTypes = {
+  review: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      text: PropTypes.string,
+      rating: PropTypes.number,
+    })
+  )
+}
 export default ReviewList

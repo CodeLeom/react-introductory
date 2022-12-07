@@ -1,6 +1,6 @@
+import {useState} from 'react'
 import Header from "./components/Header"
 import ReviewList from "./components/ReviewList"
-import {useState} from 'react'
 import reviewData from './components/reviewData'
 
 
