@@ -1,5 +1,6 @@
 import {useState} from 'react'
 import Header from "./components/Header"
+import ReviewStats from './components/ReviewStats'
 import ReviewList from "./components/ReviewList"
 import reviewData from './components/reviewData'
 
@@ -19,6 +20,7 @@ function App(){
       <div className="container">
         
         <Header />
+        <ReviewStats review={review} />
         <ReviewList review={review} revDelete={deleteReview} />
       </div>
     )
