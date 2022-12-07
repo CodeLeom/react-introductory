@@ -13,7 +13,13 @@ const reviewData = [
         id: 3,
         rating: 9,
         text: 'Accumsan justo quisque curabitur dis iaculis facilisi erat nasc.'
-      }
+      },
+      {
+        id: 4,
+        rating: 4,
+        text: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.'
+      },
+
 ]
 
 export default reviewData

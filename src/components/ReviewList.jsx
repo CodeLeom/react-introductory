@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import ReviewItem from './ReviewItem'
 
-function ReviewList({review}) {
+function ReviewList({review, revDelete}) {
     if (!review || review.length === 0){
         return <p>No review Yet</p>
     }
@@ -9,7 +9,7 @@ function ReviewList({review}) {
     <>
     <div>
         {review.map((item) =>(
-            <ReviewItem key={item.id} item={item} />
+            <ReviewItem key={item.id} item={item} revDelete={revDelete} />
         ))}
     </div>
     </>
