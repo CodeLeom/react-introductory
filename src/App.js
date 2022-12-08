@@ -2,7 +2,7 @@ import {useState} from 'react'
 import Header from "./components/Header"
 import ReviewStats from './components/ReviewStats'
 import ReviewList from "./components/ReviewList"
-import reviewData from './components/reviewData'
+import reviewData from './components/data/reviewData'
 
 
 function App(){

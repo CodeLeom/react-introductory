@@ -17,8 +17,8 @@ function Header({text, bgColor, textColor}) {
 
 Header.defaultProps = {
     text: 'Review Application',
-    bgColor: 'teal',
-    textColor: '#7cc5da'
+    bgColor: '#FF6A95',
+    textColor: '#fff'
 }
 
 Header.propTypes = {
