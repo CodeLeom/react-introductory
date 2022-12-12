@@ -3,6 +3,7 @@ import Header from "./components/Header"
 import ReviewStats from './components/ReviewStats'
 import ReviewList from "./components/ReviewList"
 import reviewData from './components/data/reviewData'
+import ReviewForm from './components/ReviewForm'
 
 
 function App(){
@@ -20,6 +21,7 @@ function App(){
       <div className="container">
         
         <Header />
+        <ReviewForm />
         <ReviewStats review={review} />
         <ReviewList review={review} revDelete={deleteReview} />
       </div>
