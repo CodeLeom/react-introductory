@@ -1,11 +1,13 @@
 import {useState} from 'react'
 import Card from "./Card"
 import Button from './Button'
+import GiveRating from './GiveRating'
 
 function ReviewForm() {
     const [text, setText] = useState('')
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
+    const [rating, setRating] = useState(10)
 
     const textChangeHandler = (e) => {
         if(text === ''){
@@ -25,6 +27,7 @@ function ReviewForm() {
     <Card>
         <form>
             <h4>Kindly Review Our Service You Just Experienced!</h4>
+            <GiveRating select={rating}/>
             <div className="input-group">
                 <input onChange={textChangeHandler} type="text" placeholder="write us a review" value={text} />
                 <Button type="submit" isDisabled={btnDisabled}>Submit</Button>
