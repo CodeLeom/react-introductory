@@ -39,7 +39,9 @@ function ReviewForm({handleAdd}) {
     <Card>
         <form onSubmit={formSubmit}>
             <h4 className='head'>Kindly Review Our Service You Just Experienced!</h4>
+
             <GiveRating select={(rating) => setRating(rating)}/>
+            
             <div className="input-group">
                 <input onChange={textChangeHandler} type="text" placeholder="write us a review" value={text} />
                 <Button type="submit" isDisabled={btnDisabled}>Submit</Button>
