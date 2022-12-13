@@ -26,12 +26,18 @@ ul {
 header {
   height: 70px;
   width: 100%;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
 }
-
+.head {
+  font-size: large;
+  text-align: center;
+  color: #202142;
+}
 .card {
   background-color: #fff;
   color: #333;

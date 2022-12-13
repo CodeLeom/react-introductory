@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 function ReviewStats({review}) {
 
      let avg = review.reduce((acc, cur) => {
@@ -16,4 +18,7 @@ function ReviewStats({review}) {
   )
 }
 
+ReviewStats.propTypes = {
+  review: PropTypes.array
+}
 export default ReviewStats
