@@ -33,7 +33,11 @@ header {
   padding: 10px;
   text-align: center;
 }
-
+.head {
+  font-size: large;
+  text-align: center;
+  color: #202142;
+}
 .card {
   background-color: #fff;
   color: #333;

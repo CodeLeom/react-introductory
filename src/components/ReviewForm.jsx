@@ -38,7 +38,7 @@ function ReviewForm({handleAdd}) {
   return (
     <Card>
         <form onSubmit={formSubmit}>
-            <h4>Kindly Review Our Service You Just Experienced!</h4>
+            <h4 className='head'>Kindly Review Our Service You Just Experienced!</h4>
             <GiveRating select={(rating) => setRating(rating)}/>
             <div className="input-group">
                 <input onChange={textChangeHandler} type="text" placeholder="write us a review" value={text} />
