@@ -3,7 +3,7 @@ import Card from "./Card"
 import Button from './Button'
 import GiveRating from './GiveRating'
 
-function ReviewForm() {
+function ReviewForm({handleAdd}) {
     const [text, setText] = useState('')
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
@@ -23,11 +23,23 @@ function ReviewForm() {
         setText(e.target.value)
     }
 
+    const formSubmit = (e) => {
+        e.preventDefault()
+        if(text.trim().length > 15){
+            const newReview = {
+                text,
+                rating
+            }
+            handleAdd(newReview)
+            setText('')
+        }
+    }
+
   return (
     <Card>
-        <form>
+        <form onSubmit={formSubmit}>
             <h4>Kindly Review Our Service You Just Experienced!</h4>
-            <GiveRating select={rating}/>
+            <GiveRating select={(rating) => setRating(rating)}/>
             <div className="input-group">
                 <input onChange={textChangeHandler} type="text" placeholder="write us a review" value={text} />
                 <Button type="submit" isDisabled={btnDisabled}>Submit</Button>

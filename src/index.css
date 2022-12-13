@@ -26,10 +26,12 @@ ul {
 header {
   height: 70px;
   width: 100%;
-  display: flex;
+  /* display: flex; */
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 30px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
 }
 
 .card {

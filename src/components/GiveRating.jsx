@@ -5,6 +5,7 @@ function GiveRating({select}) {
 
     const handleRating = (e) => {
         setSelected(+e.currentTarget.value)
+        select(+e.currentTarget.value)
     }
   return (
         <>
