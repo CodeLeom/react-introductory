@@ -1,7 +1,10 @@
-import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import ReviewContext from '../context/ReviewContext'
 import ReviewItem from './ReviewItem'
 
-function ReviewList({review, revDelete}) {
+function ReviewList() {
+  const {review} = useContext(ReviewContext)
+  
     if (!review || review.length === 0){
         return <p>No review Yet</p>
     }
@@ -9,7 +12,7 @@ function ReviewList({review, revDelete}) {
     <>
     <div>
         {review.map((item) =>(
-            <ReviewItem key={item.id} item={item} revDelete={revDelete} />
+            <ReviewItem key={item.id} item={item} />
         ))}
     </div>
     </>
@@ -17,13 +20,4 @@ function ReviewList({review, revDelete}) {
 }
 
 
-ReviewList.propTypes = {
-  review: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      text: PropTypes.string,
-      rating: PropTypes.number,
-    })
-  )
-}
 export default ReviewList

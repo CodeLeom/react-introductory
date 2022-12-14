@@ -1,6 +1,9 @@
 import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import ReviewContext from '../context/ReviewContext'
 
-function ReviewStats({review}) {
+function ReviewStats() {
+  const {review} = useContext(ReviewContext)
 
      let avg = review.reduce((acc, cur) => {
         return acc + cur.rating
