@@ -1,4 +1,5 @@
 import Card from "../Card"
+import {Link} from 'react-router-dom'
 
 function About() {
   return (
@@ -8,6 +9,9 @@ function About() {
                     <p>This is an application for a customer to give a review for a product usage or for a service.</p>
 
                     <p>Version: 1.0.0</p>
+                    <p>
+                      <Link to='/'>Go Back Home</Link>
+                    </p>
             </Card>
         </>
   )

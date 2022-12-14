@@ -7,6 +7,7 @@ import ReviewList from "./components/ReviewList"
 import reviewData from './components/data/reviewData'
 import ReviewForm from './components/ReviewForm'
 import About from './components/pages/About'
+import AboutLink from './components/AboutLink'
 
 
 function App(){
@@ -28,7 +29,7 @@ function App(){
     return ( 
       <Router>
           <Header />
-          <div className="container">
+            <div className="container">
               <Routes>
                   
                     <Route exact path='/' element = {
@@ -36,14 +37,15 @@ function App(){
                           <ReviewForm handleAdd={addReview} />
                           <ReviewStats review={review} />
                           <ReviewList review={review} revDelete={deleteReview} />
+                          <AboutLink />
                         </>
                           }
                     ></Route>
                     
                     
-                    <Route path='/about' 
-                      element={<About />} />
+                    <Route path='/about' element={<About />} />
               </Routes>
+              
             </div>
       </Router>
     )
