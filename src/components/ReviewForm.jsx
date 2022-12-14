@@ -1,13 +1,16 @@
-import {useState} from 'react'
+import {useState, useContext} from 'react'
+import ReviewContext from '../context/ReviewContext'
 import Card from "./Card"
 import Button from './Button'
 import GiveRating from './GiveRating'
 
-function ReviewForm({handleAdd}) {
+
+function ReviewForm() {
     const [text, setText] = useState('')
     const [btnDisabled, setBtnDisabled] = useState(true)
     const [message, setMessage] = useState('')
     const [rating, setRating] = useState(10)
+    const {addReview} = useContext(ReviewContext)
 
     const textChangeHandler = (e) => {
         if(text === ''){
@@ -30,7 +33,7 @@ function ReviewForm({handleAdd}) {
                 text,
                 rating
             }
-            handleAdd(newReview)
+            addReview(newReview)
             setText('')
         }
     }
@@ -39,7 +42,9 @@ function ReviewForm({handleAdd}) {
     <Card>
         <form onSubmit={formSubmit}>
             <h4 className='head'>Kindly Review Our Service You Just Experienced!</h4>
+
             <GiveRating select={(rating) => setRating(rating)}/>
+            
             <div className="input-group">
                 <input onChange={textChangeHandler} type="text" placeholder="write us a review" value={text} />
                 <Button type="submit" isDisabled={btnDisabled}>Submit</Button>

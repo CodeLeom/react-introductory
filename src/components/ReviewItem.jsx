@@ -1,14 +1,18 @@
 import PropTypes from 'prop-types'
+import { useContext } from 'react'
+import ReviewContext from '../context/ReviewContext'
 import Card from "./Card"
 import { FaTimes } from 'react-icons/fa'
 
 
-function ReviewItem({item, revDelete}) {
+function ReviewItem({item}) {
+  const {deleteReview} = useContext(ReviewContext)
+  
   return (
     <>
       <Card>
         <div className="num-display">{item.rating}</div>
-          <button onClick={() => {revDelete(item.id)}} className='close'>
+          <button onClick={() => {deleteReview(item.id)}} className='close'>
             <FaTimes color='#FF6A95' />
           </button>
         <p>{item.text}</p>
