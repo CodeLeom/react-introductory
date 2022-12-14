@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import { useContext } from 'react'
 import ReviewContext from '../context/ReviewContext'
 
@@ -21,7 +20,4 @@ function ReviewStats() {
   )
 }
 
-ReviewStats.propTypes = {
-  review: PropTypes.array
-}
 export default ReviewStats
