@@ -1,14 +1,15 @@
 import { useContext } from 'react'
 import ReviewContext from '../context/ReviewContext'
 import ReviewItem from './ReviewItem'
+import Spinner from './Spinner'
 
 function ReviewList() {
-  const {review} = useContext(ReviewContext)
+  const {review, isLoading} = useContext(ReviewContext)
   
-    if (!review || review.length === 0){
+    if (!isLoading && (!review || review.length === 0)){
         return <p>No review Yet</p>
     }
-  return (
+  return isLoading ? <Spinner /> : (
     <>
     <div>
         {review.map((item) =>(

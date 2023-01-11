@@ -1,11 +1,22 @@
 import {v4 as uuidv4} from 'uuid'
-import {createContext, useState} from 'react'
-import reviewData from '../components/data/reviewData'
+import {createContext, useState, useEffect} from 'react'
+// import reviewData from '../components/data/reviewData'
 
 const ReviewContext = createContext()
 
 export const ReviewProvider = ({children}) => {
-    const [review, setReview] = useState(reviewData)
+    // const [review, setReview] = useState(reviewData) //data coming from the default review data
+    const [review, setReview] = useState([]) //data coming from the mock backend
+    const [isLoading, setIsLoading] = useState(true)
+
+useEffect(() => {
+  fetch('http://localhost:5000/review?_sort=id&_order=desc')
+    .then(res => res.json())
+    .then(data => {
+      setReview(data)
+      setIsLoading(false)
+    })
+})
 
 const addReview = (newReview) => {
     newReview.id = uuidv4()
@@ -20,6 +31,7 @@ const deleteReview = (id) => {
 
     return <ReviewContext.Provider value={{
         review,
+        isLoading,
         deleteReview,
         addReview
     }}>
