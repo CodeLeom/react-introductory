@@ -10,7 +10,7 @@ export const ReviewProvider = ({children}) => {
     const [isLoading, setIsLoading] = useState(true)
 
 useEffect(() => {
-  fetch('http://localhost:5000/review?_sort=id&_order=desc')
+  fetch('/review?_sort=id&_order=desc')
     .then(res => res.json())
     .then(data => {
       setReview(data)
