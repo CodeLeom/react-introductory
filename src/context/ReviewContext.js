@@ -1,4 +1,3 @@
-import {v4 as uuidv4} from 'uuid'
 import {createContext, useState, useEffect} from 'react'
 // import reviewData from '../components/data/reviewData'
 
@@ -16,16 +15,27 @@ useEffect(() => {
       setReview(data)
       setIsLoading(false)
     })
-})
+}, [])
 
-const addReview = (newReview) => {
-    newReview.id = uuidv4()
-    setReview([newReview, ...review])
+
+const addReview = async (newReview) => {
+  const res = await fetch('/review', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(newReview)
+  })
+    const data = await res.json()
+    setReview([data, ...review])
   }
 
-const deleteReview = (id) => {
+const deleteReview = async (id) => {
     if(window.confirm('Are you sure you want to delete this review from the review list?')){
-    setReview(review.filter((item) => item.id !== id))
+      await fetch(`/review/${id}`, {
+        method: 'DELETE'
+      })
+      setReview(review.filter((item) => item.id !== id))
     }
   }
 
